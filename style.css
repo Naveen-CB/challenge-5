@@ -1,0 +1,142 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --Soft-violet: hsl(277, 64%, 61%);
+  --White: hsl(0, 0%, 100%);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Slight-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Very-dark-blue);
+}
+main{
+  width: 77vw;
+  height: 55vh;
+  --min-height: 437.75px;
+  background-color: var(--Dark-desaturated-blue);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  font-size: 15px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 2rem;
+}
+.image{
+  position: relative;
+}
+
+.dp{
+  object-fit: cover;
+  z-index: -9999999999;
+  height: 100%;
+  width: 100%;
+  
+}
+.image::after{
+  position: absolute;
+  content: '';
+  opacity: .5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Soft-violet);
+}
+.content{
+  --grid-column: 1 / 2;
+  --grid-row: 1 / 2;
+  width: 100%;
+  height: 100%;
+  padding: 5em 5em 4em 4em;
+  background-color: var(--Dark-desaturated-blue);
+}
+h1{
+  color: var(--White);
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 2.2em;
+  
+}
+.accent{
+  color: var(--Soft-violet);
+}
+.description{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color:var(--Slightly-transparent-white);
+  line-height: 1.5;
+  margin: 2em 0;
+  font-size: 14px;
+  width: 85%;
+}
+.items{
+  display: flex;
+  color: var(--Slight-transparent-white);
+  margin-top: 4em;
+  gap: 4em;
+  
+}
+.stat-head{
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.title{
+  text-transform: uppercase;
+}
+.value{
+  font-family: 'Inter', sans-serif;;
+  color: var(--White);
+  font-size: 1.8em;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;;
+}
+@media (max-width: 500px) {
+  main{
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    overflow: scroll;
+  }
+  .content{
+    padding: 2em .8em;
+  }
+  .dp{
+    order: -1;
+    width: 100%;
+    height: 100%;
+  }
+  .image{
+    order: -1;
+  }
+  h1{
+    margin: auto;
+    text-align: center;
+    padding: 0;
+    font-size: 1.8em;
+  }
+  .items{
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    gap: 1em;
+  }
+  .description{
+    text-align: center;
+    margin:  2em auto;
+    line-height: 1.5;
+  }
+  
+}
+
+ 
